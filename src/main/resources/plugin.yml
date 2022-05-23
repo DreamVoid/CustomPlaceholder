@@ -1,0 +1,16 @@
+name: ${project.name}
+author: DreamVoid
+description: ${project.description}
+main: me.dreamvoid.template.main
+version: ${project.version}
+api-version: 1.13
+prefix: DreamVoidPlugin
+webside: ${project.url}
+commands:
+  some-command:
+    description: Some plugin command.
+    permission: some-permission
+permissions:
+  some-permission:
+    description: Some plugin permission.
+    default: op
