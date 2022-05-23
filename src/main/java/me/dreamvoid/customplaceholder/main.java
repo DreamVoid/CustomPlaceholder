@@ -19,6 +19,13 @@ public class main extends JavaPlugin {
     }
 
     @Override
+    public void onEnable() {
+        if(getConfig().getBoolean("bStats", true)){
+            new Metrics(this,15275);
+        }
+    }
+
+    @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if(args.length>0){
             if(args[0].equalsIgnoreCase("reload")){

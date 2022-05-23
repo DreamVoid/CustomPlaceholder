@@ -1,3 +1,4 @@
+bStats: true
 messages:
   reload: "&aPlugin config reloaded."
   unknown: "&cUnknown command, try /customplaceholder reload."
