@@ -1,16 +1,21 @@
 name: ${project.name}
 author: DreamVoid
 description: ${project.description}
-main: me.dreamvoid.template.main
+main: me.dreamvoid.customplaceholder.main
 version: ${project.version}
 api-version: 1.13
 prefix: DreamVoidPlugin
 webside: ${project.url}
 commands:
-  some-command:
-    description: Some plugin command.
-    permission: some-permission
+  customplaceholder:
+    description: CustomPlaceholder 插件主命令
+    permission: customplaceholder.command
+    aliases:
+      - cp
+      - cplalceholder
 permissions:
-  some-permission:
-    description: Some plugin permission.
+  customplaceholder.command:
+    description: Allow use /customplaceholder
     default: op
+depend:
+  - PlaceholderAPI
