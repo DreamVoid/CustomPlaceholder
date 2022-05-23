@@ -1,0 +1,6 @@
+messages:
+  reload: "&aPlugin config reloaded."
+  unknown: "&cUnknown command, try /customplaceholder reload."
+placeholders:
+  example: "[%player_name%] - [%player_uuid%]"
+  example_server: "[%server_ip%] - [%server_tps%]"
