@@ -1,6 +1,8 @@
 # CustomPlaceholder
 A simple bukkit plugin which allow you to design yourself placeholders.
 
+[MCBBS](https://www.mcbbs.net/thread-1342895-1-1.html) | [MCBBS V4](https://beta.mcbbs.net/resource/l7ol84vu) | [SpigotMC](https://www.spigotmc.org/resources/102171/)
+
 ## Description
 Tired of setting the same text in every plugin that supports PlaceholderAPI? Or don't want to use the deprecated javascript nashorn engine to customize placeholders anymore? This plugin will meet your simple needs!
 
