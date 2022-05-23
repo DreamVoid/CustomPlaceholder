@@ -5,6 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class main extends JavaPlugin {
 
@@ -20,8 +24,26 @@ public class main extends JavaPlugin {
             if(args[0].equalsIgnoreCase("reload")){
                 reloadConfig();
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("messages.reload","&aPlugin config reloaded.")));
-            } else sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("messages.unknown","&cUnknown command, try /customplaceholder reload.")));
+            } else if(args[0].equalsIgnoreCase("version")){
+                sender.sendMessage("This server is running "+ getDescription().getName() +" version "+ getDescription().getVersion()+" by "+ getDescription().getAuthors().toString().replace("[","").replace("]",""));
+            }
+            else {
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("messages.unknown","&cUnknown command, try /customplaceholder reload.")));
+            }
         } else sender.sendMessage("This server is running "+ getDescription().getName() +" version "+ getDescription().getVersion()+" by "+ getDescription().getAuthors().toString().replace("[","").replace("]",""));
         return false;
+    }
+
+    @Nullable
+    @Override
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
+        List<String> list = new ArrayList<>();
+        if(args.length>0){
+            if("reload".startsWith(args[0]))
+                list.add("reload");
+            if("version".startsWith(args[0]))
+                list.add("version");
+        }
+        return list;
     }
 }
