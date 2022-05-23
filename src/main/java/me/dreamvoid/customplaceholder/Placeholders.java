@@ -1,5 +1,6 @@
 package me.dreamvoid.customplaceholder;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
@@ -35,6 +36,6 @@ public class Placeholders extends PlaceholderExpansion {
 
 	@Override
 	public @Nullable String onRequest(OfflinePlayer player, @NotNull String params) {
-		return plugin.getConfig().getString("placeholders." + params);
+		return plugin.getConfig().getString("placeholders." + params) != null ? PlaceholderAPI.setPlaceholders(player,plugin.getConfig().getString("placeholders." + params)) : null;
 	}
 }
